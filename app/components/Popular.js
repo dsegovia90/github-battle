@@ -19,7 +19,7 @@ function RepoGrid(props) {
                   alt={'Avatar for ' + repo.owner.login}
                 />
               </li>
-              <li><a href={repo.html_url}>{repo.name}</a></li>
+              <li><a href={repo.html_url} target='_blank'>{repo.name}</a></li>
               <li>@{repo.owner.login}</li>
               <li>{repo.stargazers_count} stars</li>
             </ul>
@@ -100,7 +100,6 @@ class Popular extends React.Component {
           onSelect={this.updateLanguage}
         />
         {!this.state.repos ? <p>LOADING...</p> : <RepoGrid repos={this.state.repos} />}
-
       </div>
     )
   }
